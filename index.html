@@ -24,16 +24,21 @@
     function printPrime(number) {
       const inputNumber = number;
       let output = '';
-      for (let i = 1; i <= inputNumber; i++) {
+      let count = 0;
+      let i = 2;
+
+      while (count < inputNumber) {
         if (checkPrime(i)) {
-          console.log(i);
           output += i + ' ';
+          count++;
         }
+        i++;
       }
+
       return output;
     }
 
-    const number = parseInt(prompt('Nhap so vao day', '500'));
+    const number = parseInt(prompt('Nhap so vao day', '20'));
     document.write(`<span>${printPrime(number)}</span>`);
   </script>
 </body>
