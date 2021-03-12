@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vn">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Bài tập] Hiển thị các số nguyên tố đầu tiên</title>
+</head>
+<body>
+  <script>
+    function checkPrime(number) {
+      if (number >= 2) {
+        for (let i = 2; i < number; i++) {
+          if (number % i === 0) {
+            return false;
+          }
+        }
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+    function printPrime(number) {
+      const inputNumber = number;
+      let output = '';
+      for (let i = 1; i <= inputNumber; i++) {
+        if (checkPrime(i)) {
+          console.log(i);
+          output += i + ' ';
+        }
+      }
+      return output;
+    }
+
+    const number = parseInt(prompt('Nhap so vao day', '500'));
+    document.write(`<span>${printPrime(number)}</span>`);
+  </script>
+</body>
+</html>
